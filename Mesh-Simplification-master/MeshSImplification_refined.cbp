@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="MeshSImplification_refined"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MeshSImplification_refined">
+				<Option output="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/MeshSImplification_refined.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 MeshSImplification_refined"/>
+					<CompileFile command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="MeshSImplification_refined/fast">
+				<Option output="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/MeshSImplification_refined.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/x86_64-pc-cygwin"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include/c++/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-cygwin/10/../../../../lib/../include/w32api"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 MeshSImplification_refined/fast"/>
+					<CompileFile command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make.exe -j2 -f &quot;/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Const.h">
+			<Option target="MeshSImplification_refined"/>
+		</Unit>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/FaceVertex.h">
+			<Option target="MeshSImplification_refined"/>
+		</Unit>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Mesh.cpp">
+			<Option target="MeshSImplification_refined"/>
+		</Unit>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/Mesh.h">
+			<Option target="MeshSImplification_refined"/>
+		</Unit>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/PairHeap.h">
+			<Option target="MeshSImplification_refined"/>
+		</Unit>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/main.cpp">
+			<Option target="MeshSImplification_refined"/>
+		</Unit>
+		<Unit filename="/cygdrive/y/Desktop/C++code/Mesh-Simplification-master/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
