@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -Wl,--enable-auto-import CMakeFiles/MeshSImplification_refined.dir/main.cpp.o CMakeFiles/MeshSImplification_refined.dir/Mesh.cpp.o -o MeshSImplification_refined.exe -Wl,--out-implib,libMeshSImplification_refined.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
