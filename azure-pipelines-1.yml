@@ -1,0 +1,111 @@
+# C/C++ with GCC
+# Build your C/C++ project with GCC using make.
+# Add steps that publish test results, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/apps/c-cpp/gcc
+#include <iostream>
+#include <vector>
+#include <string>
+#include <cmath>
+
+// 假设有一个代表检测框的结构体
+struct Box {
+    float x;      // 左上角x坐标
+    float y;      // 左上角y坐标
+    float width;
+    float height;
+};
+
+// 假设有一个代表mask的结构体(简化表示为一个宽高与分布的对象)
+struct Mask {
+    // 简化：用像素点计数代表mask大小，这里只是示意，不是实际图像数据
+    int pixel_count;  
+};
+
+// 模拟YoloV10对输入图像进行目标检测
+std::vector<Box> runYoloV10(const std::string &image_path) {
+    // 在实际代码中这里应调用实际的YOLO推理
+    std::vector<Box> detected_boxes;
+    // 示例：检测出一个框
+    detected_boxes.push_back({100.0f, 200.0f, 50.0f, 80.0f});
+    return detected_boxes;
+}
+
+// 模拟SAM模型根据输入box生成分割mask
+Mask runSamModel(const std::string &image_path, const Box &input_box) {
+    // 在实际代码中这里应调用实际的SAM模型推理接口
+    // 示例返回一个mask对象，假设mask大小以像素计数衡量。
+    // 实际中你需要根据box、模型输出进行计算
+    Mask m;
+    m.pixel_count = 3000; // 假设SAM对该box分割出3000个像素的mask
+    return m;
+}
+
+// 根据mask返回其几何中心点
+// 实际中应该根据mask的像素点位置计算，这里仅用box中心示意
+// 假设传入box，输出其中心点作为mask中心(实际应根据mask计算)
+std::pair<float, float> getMaskCenter(const Box &box) {
+    float cx = box.x + box.width / 2.0f;
+    float cy = box.y + box.height / 2.0f;
+    return std::make_pair(cx, cy);
+}
+
+// 再次输入模型SAM2，根据几何中心点进行新的分割
+Mask runSamModelWithPoint(const std::string &image_path, const std::pair<float,float> &point) {
+    // 模拟SAM使用点输入进行分割
+    Mask m;
+    // 假设此时模型输出一个较小或较大的mask，这里随机举例
+    m.pixel_count = 2000; // 假设给定点后分割出2000个像素的mask
+    return m;
+}
+
+// 判断新的mask和原YOLO box的关系
+// 若mask大于box(以像素面积近似比较),则舍弃,若小于则保留
+// 简化逻辑：以box面积为基准，以mask的pixel_count作近似比较
+bool shouldKeepMask(const Box &box, const Mask &mask) {
+    // 简化：假设box的像素面积 ~ width*height
+    float box_area = box.width * box.height; 
+    // 实际中mask pixel_count不一定和真实像素比例一致，需要缩放或标定
+    // 这里仅作演示逻辑
+    if (mask.pixel_count < box_area) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+int main() {
+    std::string image_path = "original_image.jpg";
+
+    // Step 1: 原始图像输入
+    std::cout << "Input: original image: " << image_path << std::endl;
+
+    // Step 2: 进入YOLOV10进行检测
+    std::vector<Box> yolo_boxes = runYoloV10(image_path);
+    std::cout << "YoloV10 detected " << yolo_boxes.size() << " boxes." << std::endl;
+
+    for (auto &box : yolo_boxes) {
+        // Step 3: 检测结果的box作为输入进入SAM模型
+        Mask initial_mask = runSamModel(image_path, box);
+        std::cout << "SAM model generated a mask with pixel_count=" << initial_mask.pixel_count << std::endl;
+
+        // 根据输出mask获取其几何中心点
+        auto center_point = getMaskCenter(box);
+        std::cout << "Mask center point: (" << center_point.first << ", " << center_point.second << ")" << std::endl;
+
+        // 将该点再次输入sam模型
+        Mask refined_mask = runSamModelWithPoint(image_path, center_point);
+        std::cout << "SAM2 model with center point generated mask pixel_count=" << refined_mask.pixel_count << std::endl;
+
+        // 判断mask与YOLO box大小关系
+        bool keep = shouldKeepMask(box, refined_mask);
+        if (keep) {
+            std::cout << "Refined mask is smaller than YOLO box, keep the mask." << std::endl;
+        } else {
+            std::cout << "Refined mask is larger than YOLO box, discard the mask." << std::endl;
+        }
+    }
+
+    std::cout << "Pipeline completed." << std::endl;
+    return 0;
+}
+
